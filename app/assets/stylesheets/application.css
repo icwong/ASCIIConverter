@@ -1,0 +1,111 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /*===============================GENERAL======================================*/
+
+body{
+  background-color: #348AA7;
+}
+
+.centered {
+    text-align: center;
+}
+
+.container-fluid.full-width {
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: hidden;
+}
+
+/*===============================NAVIGATIONBAR======================================*/
+
+.navbarfix {
+    position: relative;
+    top: 40px;
+    right: 50px;
+    word-spacing: 5px;
+    
+}
+
+ /*===============================REGISTER======================================*/
+ 
+.login-signup{
+    position: relative;
+    top: 150px;
+    right: 40px;
+}
+
+#register-wrap{
+    /*background: url(../assets/cloud.jpg) no-repeat center top;*/
+  background-color: #348AA7;
+	margin-top: -50px;
+	padding-top:120px;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 950px;
+	width: 100%;
+	max-width:100%; 
+	height:auto;
+}
+
+ /*===============================LOGIN======================================*/
+
+.login-form{
+    position: relative;
+    top: 250px;
+    right: 40px;
+}
+
+ /*===============================POST======================================*/
+ 
+.post-listings {
+  margin: 7px 7px; /* Making sure to keep some distance from all side */
+  margin-top: 10px;
+}
+
+.post-slot {
+  width: 90%; /* Configure it fit in your design  */
+  margin: 0 auto; /* Centering Stuff */
+  background-color: #FFFFFF; /* Default background */
+  padding: 20px;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.post-slot:hover{
+  background-color: #50514F;
+  color: white;
+  border-top: #50514F;
+  border-bottom: #50514F;
+  border-right: #50514F;
+}
+
+.danger {
+  border-left-color: #d9534f; /* Left side border color */
+}
+
+.listing-list{
+  list-style-type: none;
+}
+
+.typeBox{
+  position: relative;
+  left: 500px;
+  
+}

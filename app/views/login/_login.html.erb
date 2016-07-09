@@ -1,0 +1,12 @@
+<div id="user_signed_in">
+    <% if user_signed_in? %>
+        <b style="font-size: 16pt;">Hello <span style="color: #b2191b;"><%= current_user.display_name %></span>! </b>
+        <%= link_to '>Sign out'.html_safe, destroy_user_session_path, :method => :delete %>
+    <% else %>
+        <!--<b style="font-size: 20pt;">Welcome to CoopR&S! </b>-->
+        
+        <%= link_to "Sign up" .html_safe, new_user_registration_path %>
+        <!--%= link_to "Sign in" .html_safe, new_user_session_path %-->
+    <% end %>
+</div>
+

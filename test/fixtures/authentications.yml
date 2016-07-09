@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pass: false
+  approved_date: 2016-07-08
+
+two:
+  pass: false
+  approved_date: 2016-07-08

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%=raw @post.body %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @post.type %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @post.owner_name %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

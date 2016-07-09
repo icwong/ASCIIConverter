@@ -1,0 +1,100 @@
+<% content_for :mHeader do %>
+  <%= javascript_include_tag 'faker', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'passwordMeter', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'random', 'data-turbolinks-track' => true %>
+ 
+<% end %>
+
+<div id="register-wrap">
+    <div class="container">
+    <div class="row">
+      <h1 class="centered" style="position: relative; top: 100px; ">REGISTER</h1>
+    </div>
+    
+    <% content_for :head do %>
+    <style>
+      body {
+        background-color: blue;
+      } 
+    </style>
+  <% end %>
+  
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+          <div class="col-md-5">
+            <div class="login-signup">
+              <%= form_for @user, as: :user, url: {action: "create"} do |f| %>
+              <%= devise_error_messages! %>
+              
+              <div class="field">
+                <%= f.label :Email %>
+                  <%= f.email_field :email, :class => 'form-control input-lg' , :autofocus => true, :onkeyup => "validateEmail()" %>
+                  <!--<input class= "largebutton" type="button" onClick="makeEmail('user_email')" value="Give me an email" />-->
+                <img src = "/ok-24.gif" alt="checkmark" id ="emailCheck" >
+              </div>
+              
+              <br>
+              
+              <div class="field">
+                <%= f.label :Password %>
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %>
+                
+                <%= f.password_field :password, class: 'form-control input-lg' , autocomplete: "off", :onkeyup => "validatePassword()"  %>
+                <img src = "/ok-24.gif" alt="checkmark" id ="passwordCheck" >
+              </div>
+              
+              <br>
+              
+              <div class="field">
+                <%= f.label :Password, "Confirm Password" %>
+                <%= f.password_field :password_confirmation, class: 'form-control input-lg' , autocomplete: "off" , autofocus: true, :onkeyup => "validatePassword()" %>
+                <img src = "/ok-24.gif" alt="checkmark" id ="passwordConfirmationCheck" >
+              </div>
+              
+  
+              
+              <div class="meter" > 
+                <div id="passwordMeter" style=" text-align:center; height: 20px;border-radius: 5px;">
+                  <span id="meterText"></span>
+                </div>
+                    <!--<span id= "passwordHints">-try multi-word passwords<br>-longer is better<br>-add punctuation and digits</span>-->
+              </div>
+              
+  
+              
+              <div class="field" style= "text-align: center">
+                <%= f.radio_button :type, 'Student', :checked => true %> STUDENT 
+                <!--%= label :type_student, 'Student' %-->
+                <%= f.radio_button :type, 'Company' %> COMPANY
+                <!--%= label :type_company, 'Company' %-->
+              </div>
+              
+              <br>
+              
+            <!--  <div class="field">-->
+            <!--    %= fields_for :preferences do |pf| %>-->
+            <!--      %= pf.label :name %><br />-->
+            <!--      %= pf.text_field :name, autocomplete: "off", :onkeyup => "updateMeter()" %>-->
+            <!--    % end %>-->
+            <!--</div>-->
+              
+              <div class="actions">
+                <%= f.submit "SUBMIT", :class => 'button btn-block btn-lg', style: "background-color: #FE4A49; border: 2px solid #FE4A49; font-weight: bold; color: white" %>
+              </div>
+    
+            <br>
+            
+              <span style="text-align: center">Already a member? <%= render "users/shared/links" %></span>
+            </div>
+            
+          </div>
+        </div>
+  </div>  
+</div>
+
+
+<% end %>

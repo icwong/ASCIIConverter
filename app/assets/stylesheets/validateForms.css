@@ -1,0 +1,38 @@
+/*
+user_email:invalid + #emailCheck {
+   display: none;
+}
+
+#user_email:valid + #emailCheck {
+    display: inline;
+}
+*/
+/*
+#emailCheck {
+    display: none;
+    height: 16px;
+    width: 16px;
+}
+#passwordCheck {
+    display: none;
+    height: 16px;
+    width: 16px;
+}
+#passwordConfirmationCheck {
+    display: none;
+    height: 16px;
+    width: 16px;
+}
+
+#user_email {
+    border-width: 3px;
+}
+
+#user_password  {
+    border-width: 3px;
+}
+
+#user_password_confirmation  {
+    border-width: 3px;
+}
+*/

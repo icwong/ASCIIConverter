@@ -1,0 +1,68 @@
+<% content_for :mLogin do %>
+    <%= render :partial => '/login/login' %>
+<% end %>
+
+<% content_for :mFrame do %>
+    
+    <script type="text/javascript">
+      updateUrl();
+    </script>
+    
+    </script>
+        
+        <!--<div id="left">-->
+        <div class ="navbarfix">
+          <%= link_to "PROTECTED", {:controller => :protected, :action => :index}, style: "color: white; text-decoration: none" %>
+          <!--</div>-->
+          
+          <!--<div id="left">-->
+          <% if user_signed_in? %>
+          
+              <% if current_user.admin? %>
+                  <a href="/admin/">Admin page</a>     
+              <% else %>
+                  <%= link_to('Edit Preference', edit_preference_path( current_user.id ) ) %>        
+              <% end %>
+                  <a href="/posts/new" data-turbolinks="false">Write a post</a>  
+          <% else %>
+              
+                  <a href="/users/sign_up" style="color: white; text-decoration: none">REGISTER</a> 
+                  <%= link_to('LOGIN', new_user_session_path, {style: "color: white; text-decoration: none"}) %>  
+                  <a href="/text" style="color: white; text-decoration: none">LOREM</a>
+              
+          <% end %>
+        </div>
+        
+        <!--</div>-->
+    </div>
+
+<% end %>
+
+
+<div class="container-fluid full-width">
+	<div class="row">
+	  <div class="col-md-7">
+	    <h2 style="position:relative; left: 50px">Listing Posts</h2>
+	  </div>
+	 </div>
+     
+    
+  <!--<div class="container-fluid full-wdith">-->
+    <div class="row">
+      <div class= "col-md-6">
+        <div class="post-listings">
+  		  <% @posts.each do |post| %>
+            <div class="post-slot danger">
+              <ul class="listing-list">
+                <li style="font-weight: bold"><%= post.owner_name %></li>
+                <li class="btn btn-success btn-xs typeBox"><%= post.type %></li>
+                <li style="font-size: 12px"><%= post.title %> </li>
+              </ul>
+            </div>
+        <% end %>
+  	    </div>
+  	   </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,45 @@
+<% content_for :mHeader do %>
+  <%= stylesheet_link_tag 'wymeditor/skins/default/skin.css', 'data-turbolinks-track' => true %>
+  <script src="/assets/wymeditor/jquery.wymeditor.js"></script>
+<% end %>
+
+<%= form_for(@post, as: :post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field"">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field" data-turbolinks="false">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, class: 'wymeditor' %>
+  </div>
+  <% if current_user.admin? %>
+    <div class="field">
+      <%= f.radio_button :type, 'Review', :checked => true %> 
+      <%= label :type_review, 'Review' %>
+      <%= f.radio_button :type, 'Promotion' %>
+      <%= label :type_promotion, 'Promotion' %>
+    </div>
+  <% end %>
+
+  <div class="actions" data-turbolinks="false">
+    <%= f.submit class: 'wymupdate' %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.wymeditor').wymeditor();
+    });
+</script>

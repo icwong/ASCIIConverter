@@ -1,0 +1,22 @@
+<% content_for :mHeader do %>
+  <%= stylesheet_link_tag 'wymeditor/skins/default/skin.css', 'data-turbolinks-track' => true %>
+<% end %>
+
+
+<% content_for :mFrame do %>
+
+    <h1>WYMeditor integration example</h1>
+    <p><a href="http://www.wymeditor.org/">WYMeditor</a> is a web-based XHTML WYSIWYM editor.</p>
+    <form method="post" action="">
+        <textarea class="wymeditor">&lt;p&gt;Hello, World!&lt;/p&gt;</textarea>
+        <input type="submit" class="wymupdate" />
+    </form>
+
+    <script src="/assets/wymeditor/jquery.wymeditor.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.wymeditor').wymeditor();
+        });
+    </script>
+
+<% end %>

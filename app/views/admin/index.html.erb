@@ -1,0 +1,46 @@
+<% content_for :mLogin do %>
+    <%= render :partial => '/login/login' %>
+<% end %>
+
+
+<% content_for :mFrame do %>
+<script type="text/javascript">
+  updateUrl();
+</script>
+
+	<% if current_user.admin? %>
+     <ul>
+        <li><%= link_to('Write a post', new_post_path, 'data-no-turbolink' => true ) %></li>
+        <li><%= link_to('Manage posts', posts_path) %></li>
+     </ul>
+
+     <h1>Listing Users</h1>
+
+  <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>e-mail</th>
+          <th>Type</th>
+          <th>Preference</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= user.email %></td>
+            <td><%= user.type %></td>
+            <td><%= link_to user.id, edit_preference_path( user.id ) %></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
+  
+    <% else %>
+     <p>nothing</p>
+    <% end %>
+<% end %>
