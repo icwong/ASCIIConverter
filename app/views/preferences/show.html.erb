@@ -1,9 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @preference.name %>
-</p>
 
-<%= link_to 'Edit', edit_preference_path(@preference) %> |
-<%= link_to 'Back', preferences_path %>
+<h2 class="centered centered-title"><%= @preference.name%></h2> 
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 centered-body">
+            <%= link_to 'EDIT', edit_preference_path(@preference) , class: "link-to-design centered", style: "text-decoration: none" %> 
+            <%= link_to 'BACK', preferences_path, class: "link-to-design centered", style: "text-decoration: none" %>
+        </div>
+    </div>
+    
+</div>

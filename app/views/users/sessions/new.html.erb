@@ -1,54 +1,57 @@
-<div class="container">
-  <div class="row">
-    <h1 class="centered" style="position: relative; top: 100px">LOGIN</h1>
-  </div>
-  
-  <div class="container">
+<div id="login-wrap">
+  <div class="container ">
     <div class="row">
       <div class="col-md-4"></div>
-      <div class="col-md-5">
-        
-        <div class="login-form">
-        
-        <!--<form method="post" action="#" role="login">-->
-          <div id="loginContainer">
-            
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            
-            <div class="field">
-              <%= f.label :Email %>
-              <%= f.email_field :email, placeholder: "Email", :class => 'form-control input-lg', :autofocus => true %>
-              <br>
-              <%= f.label :Password %>
-              <%= f.password_field :password, placeholder: "Password", :class => 'form-control input-lg', :autofocus => true, :autocomplete => :off %>
+        <div class="col-md-5">
+              
+          <div class="login-form">
+              <!--<form method="post" action="#" role="login">-->
+            <div id="login-container">
+              
+              <div class="panel" style: "border: 2px solid #374f6e">
+                <div class="panel-heading panel-head-design" style="border: 2px solid #374f6e">
+                  <h3 class="panel-title centered panel-heading-design" >LOGIN</h3>
+    			      </div>
+    			      
+    			      <div class="panel-body">
+                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    
+                  <div class="field">
+                    <%= f.label :Email %>
+                    <%= f.email_field :email, placeholder: "Email", :class => 'form-control input-lg', :autofocus => true %>
+                    <br>
+                    <%= f.label :Password %>
+                    <%= f.password_field :password, placeholder: "Password", :class => 'form-control input-lg', :autofocus => true, :autocomplete => :off %>
+                  </div>
+                    
+                  <br>
+                    
+                  <div class="actions">
+                    <%= f.submit "LOGIN", :class => 'button btn-lg btn-block', style: "background-color: #0EAD69; color: white; font-weight: bold; border: 2px solid #0EAD69" %>
+                  </div>
+                    
+                  <br>
+                    
+                  <% if devise_mapping.rememberable? %>
+                    <!--<div class="field">-->
+                      <%= f.check_box :remember_me %> Remember Me
+                      <!--%= f.label :remember_me %-->
+                      <!--</div>-->
+                  <% end %>
+                    
+                  </br>
+                  <%= render "users/shared/links" %>
+                </div>
+              </div>
+                  
             </div>
-            
-            <br>
-            
-            <div class="actions">
-              <%= f.submit "LOGIN", :class => 'button btn-lg btn-block', style: "background-color: #0EAD69; color: white; font-weight: bold; border: 2px solid #0EAD69" %>
-            </div>
-            
-            <br>
-            
-            <% if devise_mapping.rememberable? %>
-              <!--<div class="field">-->
-                <%= f.check_box :remember_me %> Remember Me
-                <!--%= f.label :remember_me %-->
-              <!--</div>-->
-            <% end %>
-            
-            </br>
-            <%= render "users/shared/links" %>
+            <div class="col-md-3"></div>
+                
           </div>
-        <!--</form>-->
-      </section>
-        
+        </div>
       </div>
     </div>
-  </div>
-
-      
-
+  
+  <% end %>
 </div>
-<% end %>
+

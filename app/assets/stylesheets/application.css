@@ -15,12 +15,18 @@
  */
  /*===============================GENERAL======================================*/
 
-body{
-  background-color: #348AA7;
-}
-
 .centered {
     text-align: center;
+}
+
+.centered-title{
+    padding-top: 120px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.centered-body{
+    padding-top: 150px;
 }
 
 .container-fluid.full-width {
@@ -29,68 +35,127 @@ body{
     overflow-x: hidden;
 }
 
+.form-control-style{
+    background-color: #fafafa;
+}
+
+.link-to-design{
+    color: #02c39a;
+    position: relative;
+    left: 35%;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.right-align{
+    text-align: right;
+}
+
+
+
 /*===============================NAVIGATIONBAR======================================*/
 
 .navbarfix {
     position: relative;
     top: 40px;
-    right: 50px;
-    word-spacing: 5px;
+    right: -180px;
     
 }
+
+.navbarfix:hover{
+    color: black;
+}
+
 
  /*===============================REGISTER======================================*/
  
 .login-signup{
     position: relative;
     top: 150px;
-    right: 40px;
+    right: 30px;
 }
 
 #register-wrap{
-    /*background: url(../assets/cloud.jpg) no-repeat center top;*/
-  background-color: #348AA7;
+	background-color: #fafafa;
 	margin-top: -50px;
-	padding-top:120px;
-	background-attachment: relative;
+	top: 250px;
 	background-position: center center;
-	min-height: 950px;
 	width: 100%;
 	max-width:100%; 
-	height:auto;
+	height: 100%;
+	min-height: 1350px;
+
 }
 
  /*===============================LOGIN======================================*/
 
 .login-form{
     position: relative;
-    top: 250px;
+    top: 450px;
     right: 40px;
 }
 
+.panel-heading-design{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+.panel-head-design{
+    background-color: #374f6e;
+    padding: 20px;
+}
+
+#login-wrap{
+    /*background: url(../assets/tower.jpg) no-repeat center top; */
+    background-color: #fafafa;
+	margin-top: -50px;
+	top: 250px;
+	background-position: center center;
+	width: 100%;
+	max-width:100%; 
+	height: 100%;
+	min-height: 1350px;
+
+    
+}
+
+
  /*===============================POST======================================*/
  
-.post-listings {
+.post-listings, .pre-listings {
   margin: 7px 7px; /* Making sure to keep some distance from all side */
   margin-top: 10px;
 }
 
 .post-slot {
-  width: 90%; /* Configure it fit in your design  */
+  width: 80%; /* Configure it fit in your design  */
   margin: 0 auto; /* Centering Stuff */
   background-color: #FFFFFF; /* Default background */
-  padding: 20px;
   border: 1px solid #eee;
   border-left-width: 5px;
   border-radius: 3px;
-  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.preference-slot{
+  width: 80%; /* Configure it fit in your design  */
+  margin: 0 auto; /* Centering Stuff */
+  padding: 15px;
+  background-color: #FFFFFF; /* Default background */
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-radius: 3px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
 
 .post-slot:hover{
-  background-color: #50514F;
-  color: white;
+  background-color: #E8E7EA ;
   border-top: #50514F;
   border-bottom: #50514F;
   border-right: #50514F;
@@ -106,6 +171,16 @@ body{
 
 .typeBox{
   position: relative;
-  left: 500px;
+  left: 80%;
   
 }
+
+/*===============================EDIT PREFERENCE======================================*/
+
+.submit-button{
+    position: relative;
+    left: 35%;
+    font-weight: bold;
+    border: 1px solid black;
+}
+

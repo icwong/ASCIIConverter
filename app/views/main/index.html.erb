@@ -12,7 +12,7 @@
         
         <!--<div id="left">-->
         <div class ="navbarfix">
-          <%= link_to "PROTECTED", {:controller => :protected, :action => :index}, style: "color: white; text-decoration: none" %>
+          <%= link_to "PROTECTED ", {:controller => :protected, :action => :index}, style: "color: white; text-decoration: none; padding: 5px" %>
           <!--</div>-->
           
           <!--<div id="left">-->
@@ -21,15 +21,14 @@
               <% if current_user.admin? %>
                   <a href="/admin/">Admin page</a>     
               <% else %>
-                  <%= link_to('Edit Preference', edit_preference_path( current_user.id ) ) %>        
+                  <%= link_to('EDIT PREFERENCE', edit_preference_path( current_user.id ) , style: "color: white; text-decoration: none; padding: 5px") %>        
               <% end %>
-                  <a href="/posts/new" data-turbolinks="false">Write a post</a>  
+                   <a href="/posts/new" data-turbolinks="false" style="color: white; text-decoration: none; padding: 5px" >ADD POST</a> 
           <% else %>
-              
-                  <a href="/users/sign_up" style="color: white; text-decoration: none">REGISTER</a> 
-                  <%= link_to('LOGIN', new_user_session_path, {style: "color: white; text-decoration: none"}) %>  
-                  <a href="/text" style="color: white; text-decoration: none">LOREM</a>
-              
+                 <a href="/text" style: "color: white; text-decoration: none; padding: 5px" >LOREM</a>
+                  <a href="/users/sign_up" style: "color: white; text-decoration: none; padding: 5px">REGISTER</a> 
+                  <%= link_to('LOGIN', new_user_session_path, {style: "color: white; text-decoration: none; padding: 5px"}) %>  
+                
           <% end %>
         </div>
         
@@ -38,29 +37,28 @@
 
 <% end %>
 
+<h2 class="centered centered-title ">LISTING POSTS</h2>
 
 <div class="container-fluid full-width">
-	<div class="row">
-	  <div class="col-md-7">
-	    <h2 style="position:relative; left: 50px">Listing Posts</h2>
-	  </div>
-	 </div>
-     
-    
+
+
   <!--<div class="container-fluid full-wdith">-->
     <div class="row">
-      <div class= "col-md-6">
-        <div class="post-listings">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="post-listings centered-body">
   		  <% @posts.each do |post| %>
             <div class="post-slot danger">
               <ul class="listing-list">
                 <li style="font-weight: bold"><%= post.owner_name %></li>
-                <li class="btn btn-success btn-xs typeBox"><%= post.type %></li>
+                <li class="btn btn-primary btn-success" style="font-weight: bold"><%= post.type %></li>
                 <li style="font-size: 12px"><%= post.title %> </li>
               </ul>
             </div>
         <% end %>
   	    </div>
+      </div>
+        <div class="col-md-3"></div>
   	   </div>
     </div>
   </div>

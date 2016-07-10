@@ -1,27 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Preferences</h1>
+<h2 class="centered centered-title ">LISTING PREFERENCES</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-fluid full-width">
 
-  <tbody>
-    <% @preferences.each do |preference| %>
-      <tr>
-        <td><%= preference.name %></td>
-        <td><%= link_to 'Show', preference %></td>
-        <td><%= link_to 'Edit', edit_preference_path(preference) %></td>
-        <td><%= link_to 'Destroy', preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
-
-<%= link_to 'New Preference', new_preference_path %>
+  <!--<div class="container-fluid full-wdith">-->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-6">
+        <div class="post-listings centered-body">
+    		  <% @preferences.each do |preference| %>
+            <div class="preference-slot" style="display: inline-block">
+                <span style="font-weight: bold"><%= preference.name %></span>
+                <div class="right-align">
+                  <%= link_to 'SHOW', preference , class: "btn btn-primary btn-success", style: "font-weight: bold"  %>
+                  <%= link_to 'EDIT', edit_preference_path(preference), class: "btn btn-primary btn-info", style: "font-weight: bold" %>
+                  <%= link_to 'DESTROY', preference, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-danger", style: "font-weight: bold" %>
+                </div>
+            </div>
+        <% end %>
+  	    </div>
+      </div>
+        <div class="col-md-3"></div>
+  	   </div>
+    </div>
+  </div>
+</div>
