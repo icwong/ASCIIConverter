@@ -1,24 +1,38 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="container centered">
+  <h1 class="centered centered-title" style="text-transform: uppercase"><%= notice %></h2>
+  <br>
+  <%= link_to '← Back', posts_path ,class: "link-to-design", style: "text-decoration: none" %>  <span style="font-size: 30px">•</span>
+  <%= link_to 'Edit', edit_post_path(@post) , class: "link-to-design ", style: "text-decoration: none"%>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%=raw @post.body %>
-</p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @post.type %>
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @post.owner_name %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    
+      <div class="col-md-4 centered-body">
+  
+        <div class="centered">
+          <span style="font-size: 50px">TITLE</span><br>
+            <span style="font-size: 25px"><%= @post.title %></span><br>
+          <hr>
+          <span style="font-size: 50px">BODY</span><br>
+            <span style="font-size: 25px"><%=raw @post.body %></span>
+          <hr>
+            
+          <span style="font-size: 50px">TYPE</span><br>
+            <span style="font-size: 25px"><%= @post.type %></span><br>
+          <hr>
+            
+          <span style="font-size: 50px">OWNER</span><br>
+           <span style="font-size: 25px"><%= @post.owner_name %></span><br>
+          <hr>
+        </div>
+        
+        
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>

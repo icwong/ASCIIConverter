@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-	    	<div class="container">
-	        <!-- Brand and toggle get grouped for better mobile display -->
+	<div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header page-scroll">
 					<a class="navbar-brand" <a href="/" style="color: white; font-weight: bold">COOPR&ampS</i></a></a>
 	            	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -13,11 +13,15 @@
 
 		        <!-- Collect the nav links, forms, and other content for toggling -->
 		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		        	<ul class="nav navbar-nav navbar-left">
+		        		<li>
+						 <%= yield :mLogin %>
+						</li>
+		        	</ul>
 		            <ul class="nav navbar-nav navbar-right">
-						<!--<li>-->
-						<!--    %= yield :mLogin %--> 
-						<!--</li>-->
-						<%= yield :mFrame %>
+						<li>
+							<%= yield :mFrame %>
+						</li>
 					</ul>
 		        </div>
 	    	</div>

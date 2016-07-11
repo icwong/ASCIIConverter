@@ -12,5 +12,3 @@ comp = User.create!(email: 'company@domain.com', :password => 'cors2016', :passw
 Preference.create!(name: 'Mob Company', user_id: comp.id);
 stud = User.create!(email: 'student@domain.com', :password => 'cors2016', :password_confirmation => 'cors2016', :type => 'Student');
 Preference.create!(name: 'Mob Student', user_id: stud.id);
-
-

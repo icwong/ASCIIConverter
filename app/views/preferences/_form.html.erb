@@ -14,13 +14,13 @@
 
   <div class="field">
     <div class="form-group">
-      <%= f.label :Name, "NAME" %>
-      <%= f.text_field :name, class: "form-control form-control-style" %>
+      <%= f.label :Name, "NAME —" ,class: "input-title" %>
+      <%= f.text_field :name, class: "form-control form-control-style input-lg" %>
     </div>
-    <hr>
-    
+
+  <br>
   </div>
   <div class="actions">
-    <%= f.submit "UPDATE PREFERENCE", class: "btn btn-default btn-md centered submit-button" %>
+    <%= f.submit "UPDATE PREFERENCE", class: "btn btn-default centered " %>
   </div>
 <% end %>

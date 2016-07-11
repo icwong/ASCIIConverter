@@ -1,31 +1,27 @@
+<h2 class="centered centered-title" > FORGOT YOUR PASSWORD</h2>
+<h4 class="centered"> WE JUST NEED YOUR EMAIL</h4>
+
 <div class="container">
-  <div class="login-signup">
-      <div class="col-sm-6">
-        
-        <article role="login">
-          <h3 class="text-center">
-            <i class="fa fa-lock"><i>FORGOT YOUR PASSWORD</i></i> <!---FontAwesomeIcon--->
-          </h3>
-          
-          </hr>
-          
-          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-          <%= devise_error_messages! %>
-          
-          <div class="field">
-             <%= f.email_field :email, placeholder: "Email", :class => 'form-control form-group' , :autofocus => true %>
-          </div>
-          
-          <div class="actions">
-            <%= f.submit "Send me reset password instructions", class: "btn btn-success btn-block form-group" %>
-          </div>
-          
-            <span style="text-align: center"><%= render "users/shared/links" %></span>
-        </article>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 centered-body">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= devise_error_messages! %>
+            <br>
+            <div class="field">
+              <%= f.email_field :email, placeholder: "EMAIL", :class => 'form-control form-group' , :autofocus => true %>
+            </div>
+            
+            <div class="actions">
+              <%= f.submit "Send Me A Password Reset Instructions", class: "btn btn-success btn-block form-group", style: "color: white; font-weight: bold" %>
+            </div>
+            
+            <span class="centered"><%= render "users/shared/links" %></span>
+            <% end %>
+        </div>
     </div>
-  </div>
+    
 </div>
 
-<% end %>
 
 

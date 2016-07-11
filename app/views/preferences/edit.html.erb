@@ -1,4 +1,9 @@
-<h2 class="centered centered-title" > EDITING PREFERENCE</h2>
+<div class="container centered">
+    <h2 class="centered-title">EDITING PREFERENCE</h2>
+    <%= link_to '← BACK', preferences_path, class: "link-to-design", style: "text-decoration: none" %>  <span style="font-size: 30px">•</span>
+    <%= link_to 'SHOW', @preference , class: "link-to-design ", style: "text-decoration: none" %> 
+    
+</div>
 
 <div class="container">
     <div class="row">
@@ -6,11 +11,8 @@
         <div class="col-md-6 centered-body">
             <%= render 'form' %>
             <br>
-            <%= link_to 'SHOW', @preference , class: "link-to-design centered", style: "text-decoration: none" %> 
-            <%= link_to 'BACK', preferences_path, class: "link-to-design centered", style: "text-decoration: none" %>
         </div>
     </div>
-    
 </div>
 
 

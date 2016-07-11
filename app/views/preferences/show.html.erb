@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container centered">
+    <h2 class="centered centered-title">PRERFERENCE SHOW</h2>
+    <%= link_to '← BACK', preferences_path, class: "link-to-design", style: "text-decoration: none" %> <span style="font-size: 30px">•</span>
+    <%= link_to 'EDIT', edit_preference_path(@preference) , class: "link-to-design", style: "text-decoration: none" %> 
+</div>
 
 <h2 class="centered centered-title"><%= @preference.name%></h2> 
+<br>
+<br>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 centered-body">
-            <%= link_to 'EDIT', edit_preference_path(@preference) , class: "link-to-design centered", style: "text-decoration: none" %> 
-            <%= link_to 'BACK', preferences_path, class: "link-to-design centered", style: "text-decoration: none" %>
-        </div>
-    </div>
+<div class="container centered">
     
 </div>
+
+

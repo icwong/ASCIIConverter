@@ -11,7 +11,7 @@
     </script>
         
         <!--<div id="left">-->
-        <div class ="navbarfix">
+        <div class ="navbarfix-right">
           <%= link_to "PROTECTED ", {:controller => :protected, :action => :index}, style: "color: white; text-decoration: none; padding: 5px" %>
           <!--</div>-->
           
@@ -23,7 +23,7 @@
               <% else %>
                   <%= link_to('EDIT PREFERENCE', edit_preference_path( current_user.id ) , style: "color: white; text-decoration: none; padding: 5px") %>        
               <% end %>
-                   <a href="/posts/new" data-turbolinks="false" style="color: white; text-decoration: none; padding: 5px" >ADD POST</a> 
+                   
           <% else %>
                  <a href="/text" style: "color: white; text-decoration: none; padding: 5px" >LOREM</a>
                   <a href="/users/sign_up" style: "color: white; text-decoration: none; padding: 5px">REGISTER</a> 
@@ -37,29 +37,81 @@
 
 <% end %>
 
-<h2 class="centered centered-title ">LISTING POSTS</h2>
+<div id="indexwrap" id="home" name="home">
+	<div class="header-title">
+		<div id="header-text">FIND THE CAREER YOUR DESERVE</div>
+		<div id="header-text">START CONTRIBUTING NOW</div>
+		<% if user_signed_in? %>
+		<br>
+		<br>
+  <a href="/posts/new" data-turbolinks="false" class="btn btn-lg btn-info" style=" color: white; " >CREATE A POST</a> 
+<% end %>
+	</div>
+</div>
 
-<div class="container-fluid full-width">
+
+
+
+<!--<h2 class="centered centered-title" style="color: #797979">BROWSE LISTINGS</h2>-->
+
+
+
+<!--<div class="container-fluid full-width">-->
+  
+
 
 
   <!--<div class="container-fluid full-wdith">-->
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-6">
-        <div class="post-listings centered-body">
-  		  <% @posts.each do |post| %>
-            <div class="post-slot danger">
-              <ul class="listing-list">
-                <li style="font-weight: bold"><%= post.owner_name %></li>
-                <li class="btn btn-primary btn-success" style="font-weight: bold"><%= post.type %></li>
-                <li style="font-size: 12px"><%= post.title %> </li>
-              </ul>
+<!--    <div class="row">-->
+<!--      <div class="col-md-3"></div>-->
+<!--      <div class="col-md-6">-->
+<!--        <div class="post-listings centered-body">-->
+<!--  		  % @posts.each do |post| %>-->
+<!--            <div class="post-slot">-->
+<!--              <ul class="review-list">-->
+<!--                <li style="color: #797979">%= post.owner_name %></li>-->
+<!--                <li class="btn btn-primary btn-success" style="font-weight: bold">%= post.type %></li>-->
+<!--                <li style="font-size: 12px; font-weight: bold">%= post.title %> </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--        % end %>-->
+<!--  	    </div>-->
+<!--      </div>-->
+<!--        <div class="col-md-3"></div>-->
+<!--  	   </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container">
+  <div class="row">
+    <div class="browse-listing col-xs-12">
+      <h2 class="centered centered-title" style="color: #797979">BROWSE LISTINGS</h2>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="review-list">
+        <ul class="review-table">
+          <% @posts.each do |post| %>
+          
+          <li id="review-slot">
+            <div class="review-slot-about">
+              <div class="post-slot-name post-slot-column">
+                <h3 class="post-slot-owner-name"><%= post.owner_name %></h3>
+                <div class="post-slot-title"><%= post.title %></div>
+              </div>
+              
+              <div class="post-slot-type post-slot-column">
+                <div class="post-slot-button btn btn-success"><%= post.type %></div>
+              </div>
             </div>
-        <% end %>
-  	    </div>
+          
+          </li>
+          <% end %>
+
+        </ul>
       </div>
-        <div class="col-md-3"></div>
-  	   </div>
     </div>
   </div>
 </div>
