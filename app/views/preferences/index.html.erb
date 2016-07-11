@@ -1,32 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h2 class="centered centered-title ">LISTING PREFERENCES</h2>
 
-<div class="container-fluid full-width">
-
-
-  <!--<div class="container-fluid full-wdith">-->
-    <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-6">
-        <div class="post-listings centered-body">
-    		  <% @preferences.each do |preference| %>
-            <div class="preference-slot" style="display: inline-block">
-                <span style="font-weight: bold"><%= preference.name %></span>
-                <div class="right-align">
-                  <%= link_to 'SHOW', preference , class: "btn btn-primary btn-success", style: "font-weight: bold"  %>
-                  <%= link_to 'EDIT', edit_preference_path(preference), class: "btn btn-primary btn-info", style: "font-weight: bold" %>
-                  <%= link_to 'DESTROY', preference, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-danger", style: "font-weight: bold" %>
-                </div>
-            </div>
-        <% end %>
-  	    </div>
-      </div>
-        <div class="col-md-3"></div>
-  	   </div>
-    </div>
-  </div>
-</div>
 
 <div class="container">
   <div class="row">
@@ -38,17 +12,18 @@
       <br>
       <div class="review-list">
         <ul class="review-table">
-          <% @posts.each do |post| %>
+          <% @preferences.each do |preference| %>
           
           <li id="review-slot">
             <div class="review-slot-about">
               <div class="post-slot-name post-slot-column">
                 <h3 class="post-slot-owner-name"><%= preference.name %></h3>
-                <div class="post-slot-title"><%= post.title %></div>
               </div>
               
               <div class="post-slot-type post-slot-column">
-                <div class="post-slot-button btn btn-success"><%= post.type %></div>
+                <div class="post-slot-button "><%= link_to 'SHOW', preference , class: "btn btn-primary btn-success", style: "font-weight: bold"%></div>
+                <div class="post-slot-button "><%= link_to 'EDIT', edit_preference_path(preference), class: "btn btn-primary btn-info", style: "font-weight: bold" %></div>
+                <div class="post-slot-button "><%= link_to 'DESTROY', preference, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-danger", style: "font-weight: bold" %></div>
               </div>
             </div>
           

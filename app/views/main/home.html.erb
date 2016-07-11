@@ -1,0 +1,160 @@
+<% content_for :mHeader do %>
+    <%= stylesheet_link_tag 'table', 'data-turbolinks-track' => true %>
+<% end %>
+
+<% content_for :mLogin do %>
+    <%= render :partial => '/login/login' %>
+<% end %>
+
+<% content_for :mFrame do %>
+
+<script type="text/javascript">
+  updateUrl();
+</script>
+
+<!--<div id="left">-->
+        <div class ="navbarfix-right">
+          <%= link_to "PROTECTED ", {:controller => :protected, :action => :index}, style: "color: black; text-decoration: none; padding: 5px" %>
+          <!--</div>-->
+          
+          <!--<div id="left">-->
+          <% if user_signed_in? %>
+          
+              <% if current_user.admin? %>
+                  <a href="/admin/">Admin page</a>     
+              <% else %>
+                  <%= link_to('EDIT PREFERENCE', edit_preference_path( current_user.id ) , style: "color: black; text-decoration: none; padding: 5px") %>        
+              <% end %>
+                   
+          <% else %>
+                 <a href="/text" style= "color: black; text-decoration: none; padding: 5px" >LOREM</a>
+                  <a href="/users/sign_up" style= "color: black; text-decoration: none; padding: 5px">REGISTER</a> 
+                  <%= link_to('LOGIN', new_user_session_path, {style: "color: black; text-decoration: none; padding: 5px"}) %>  
+                
+          <% end %>
+        </div>
+        
+        <!--</div>-->
+    </div>
+
+<% end %>
+<div id="headerwrap" id="home" name="home">
+	<div class="header-title">
+		<div id="header-text">PROMOTE CO-OP OFFERS</div>
+		<div id="header-text">SHARE CO-OP EXPERIENCE</div>
+	</div>
+</div>
+
+
+<div class="container about" id="about" name="about">
+	<div class="row">
+		<br>
+		<i><h6 class="centered"> .01 </h6></i>
+			<br>
+			<h3 class="centered">ABOUT US</h3>
+			<br>
+			<br>
+			<br>
+
+			<!-- Left side text for about -->
+		<div class="container">
+			
+			<div class="col-lg-6"> 
+				<p> 
+					CoopR&S is aiming to provide a reliable and easy­to­access online space for
+					companies to promote their co­op offers and for students sharing their co­op experience.
+					Based on user's preferences and personal information, the application will filter and sort the
+					content in order to make sure every displayed post is as relevant as possible to the user. In
+					addition to the one­time user authentication process through e­mail, the application also has
+					an annual status check mechanism to ensure all post editors are qualified to give advice.
+				</p>
+			</div>
+			
+			<div class="col-lg-6">
+				<p>
+					Forum is the closest application which has several functionalities overlapping this
+					application. This application will enhance user management, security and content control in
+					order to make sure information is reliable and user would not have a risk of personal
+					information disclosure. There is an explicit encryption process to make sure personal
+					information cannot be stolen on the way of transferring and been saved in database.
+					Accessibility is another focus: mobile­mode, high contrast/colour blind mode, screen
+					reader support, and keyboard navigation ability allow people in special situation can also
+					access the application
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="picturewrap" id="picture" name="picture"></div>
+
+<div class="container company" id="company" name="company">
+	<br>
+	<!-- Title Section -->
+	<div class="row" >
+		<i><h6 class="centered"> .02 </h6></i>
+		<br>
+		<h3 class="centered">NOTABLE COMPANIES</h3>
+		<br>
+		<br>
+		<br>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="img-hover">
+					<img class="img-responsive img-hover" src="../assets/microsoft.jpg" height="220" style="max-height: 220px" >
+				</div>
+				
+				<br>
+				
+				<div class="img-hover">
+					<img class="img-responsive" src="../assets/ibm.png">
+				</div>
+			</div>
+
+			<div class="col-md-8">
+				<div class="img-hover">
+					<img class="img-responsive" src="../assets/sap.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="img-hover">
+					<img class="img-responsive" src="../assets/tesla.jpg" alt="">
+				</div>
+			</div>
+				
+			<div class="col-md-4">
+				<div class="img-hover">
+					<img class="img-responsive" src="../assets/google.png" alt="">
+				</div>
+	
+				<br>
+	
+				<div class="img-hover">
+					<img class="img-responsive" src="../assets/intel.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="footerwrap">
+	<div class="container">
+		<ul id="footerMenu">
+			<!--<li><a href="">INSTAGRAM</a></li>-->
+  	<!--		<li><a href="">FACEBOOK</a></li>-->
+			<!--<li><a href="">TWITTER</a></li>-->
+			<!--<li><a href="">SNAPCHAT</a></li>-->
+		</ul>
+	</div>
+</div>	
+

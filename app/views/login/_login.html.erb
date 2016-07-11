@@ -1,8 +1,8 @@
 <div id="user_signed_in">
     <% if user_signed_in? %>
         <div class="navbarfix-left">
-            <span style="color: white; padding: 5px"><%= current_user.display_name %></span>
-            <%= link_to 'LOGOUT'.html_safe, destroy_user_session_path, :method => :delete, style: "text-decoration: none; color: white" %>
+            <span style="color: black; padding: 5px"><%= current_user.display_name %></span>
+            <%= link_to 'LOGOUT'.html_safe, destroy_user_session_path, :method => :delete, style: "text-decoration: none; color: black" %>
         </div>
     <% else %>
         <!--<b style="font-size: 20pt;">Welcome to CoopR&S! </b>-->

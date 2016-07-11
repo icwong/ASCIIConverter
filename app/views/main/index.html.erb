@@ -14,7 +14,7 @@
 
 <!--<div id="left">-->
         <div class ="navbarfix-right">
-          <%= link_to "PROTECTED ", {:controller => :protected, :action => :index}, style: "color: white; text-decoration: none; padding: 5px" %>
+          <%= link_to "PROTECTED ", {:controller => :protected, :action => :index}, style: "color: black; text-decoration: none; padding: 5px" %>
           <!--</div>-->
           
           <!--<div id="left">-->
@@ -23,12 +23,12 @@
               <% if current_user.admin? %>
                   <a href="/admin/">Admin page</a>     
               <% else %>
-                  <%= link_to('EDIT PREFERENCE', edit_preference_path( current_user.id ) , style: "color: white; text-decoration: none; padding: 5px") %>        
+                  <%= link_to('EDIT PREFERENCE', edit_preference_path( current_user.id ) , style: "color: black; text-decoration: none; padding: 5px") %>        
               <% end %>
                    
           <% else %>
-                 <a href="/text" style: "color: black; text-decoration: none; padding: 5px" >LOREM</a>
-                  <a href="/users/sign_up" style: "color: black; text-decoration: none; padding: 5px">REGISTER</a> 
+                 <a href="/text" style= "color: black; text-decoration: none; padding: 5px" >LOREM</a>
+                  <a href="/users/sign_up" style= "color: black; text-decoration: none; padding: 5px">REGISTER</a> 
                   <%= link_to('LOGIN', new_user_session_path, {style: "color: black; text-decoration: none; padding: 5px"}) %>  
                 
           <% end %>
@@ -47,7 +47,7 @@
 		<% if user_signed_in? %>
 		<br>
 		<br>
-  <a href="/posts/new" data-turbolinks="false" class="btn btn-lg btn-info" style=" color: white; " >CREATE A POST</a> 
+  <a href="/posts/new" data-turbolinks="false" class="btn btn-lg btn-info" style=" color: white; " >CREATE A POST</a><br>
   <%= link_to 'Test email', { controller: "authentications", action: "mail", :uid => current_user.id } %>
 <% end %>
 	</div>
