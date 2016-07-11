@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  resources :authentications
+
   resources :histories
   resources :profiles
   resources :tags
   root 'main#index'
-  # root 'preferences#home'
+
   get 'admin' => 'admin#index'
   get 'index' => 'main#index'
   get 'text' => 'main#dummy'
   get 'edit' => 'main#editor'
+  get 'compare' => 'main#compare'
+  get 'mail' => 'authentications#mail'
+  get 'verify' => 'authentications#verify'
+
   resources :posts
   resources :preferences
   resources :protected

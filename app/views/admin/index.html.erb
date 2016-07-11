@@ -2,7 +2,7 @@
     <%= render :partial => '/login/login' %>
 <% end %>
 
-
+<link rel="stylesheet" type="text/css" href="table.css">
 <% content_for :mFrame do %>
 <script type="text/javascript">
   updateUrl();
@@ -14,9 +14,11 @@
         <li><%= link_to('Manage posts', posts_path) %></li>
      </ul>
 
-     <h1>Listing Users</h1>
+     <div class="table-title">
+        <h3>Listing Users</h3>
+    </div>
 
-  <table>
+  <table class="table-list-users">
       <thead>
         <tr>
           <th>ID</th>

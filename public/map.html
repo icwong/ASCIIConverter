@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Bing Map</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+      <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+      <script type="text/javascript">
+
+      var map = null;
+
+      function GetMap()
+      {  
+
+         map = new Microsoft.Maps.Map(document.getElementById("mapDiv"), {credentials: "AkncMOPhJUoGDu9stqfQxrQisQXAmlDYdEMrfVHr5eOwv5-QKONY7tAA1IxJjJGK", center: new Microsoft.Maps.Location(49.282964, -123.121861), zoom: 11 });
+      }
+
+
+      function searchModuleLoaded()
+      {
+         var searchManager = new Microsoft.Maps.Search.SearchManager(map);
+         var address = document.getElementById('query').value;
+         var geocodeRequest = {where: address, count:10, callback:geocodeCallback, errorCallback:errCallback};
+         searchManager.geocode(geocodeRequest);
+      }
+     
+      function geocodeCallback(geocodeResult, userData)
+      {
+        var result = document.getElementById('result');        
+        result.innerHTML = "The first geocode result is " + geocodeResult.results[0].name + ".";
+        
+        if (geocodeResult.results[0] && geocodeResult.results.length > 0)
+            {
+               var location = geocodeResult.results[0].location;
+               map.setView( {center: location, zoom: 12 } );
+               var pushpin = new Microsoft.Maps.Pushpin(location);
+               map.entities.push(pushpin);
+            }
+      }
+
+      function errCallback(geocodeRequest)
+      {
+        var result = document.getElementById('result');
+        result.innerHTML = "An error occurred.";
+      }
+
+      function search() {
+        Microsoft.Maps.loadModule('Microsoft.Maps.Search', { callback: searchModuleLoaded });
+      }
+      
+      </script>
+   </head>
+   <body onload="GetMap();">
+      <p id='result'></p>
+      <div id='mapDiv' style="position:relative; width:600px; height:600px;"></div>
+      <input type="textarea" id="query" /> | <input type="button" value="search" onclick="search()" />
+   </body>
+</html>

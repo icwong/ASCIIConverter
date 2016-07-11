@@ -216,10 +216,6 @@ body{
     right: 50%;
 }
 
-
-
-
-
 .navbarfix:hover{
     color: black;
 }
@@ -289,8 +285,6 @@ body{
 	min-height: 1350px;
 }
 
-
-
  /*===============================POST======================================*/
  
 .review-table{
@@ -358,8 +352,6 @@ body{
 }
 
 
-
-
 /*===============================EDIT PREFERENCE======================================*/
 
 .submit-button{
@@ -375,6 +367,3 @@ body{
     background-color: black;
     padding: 6px;
 }
-
-
-

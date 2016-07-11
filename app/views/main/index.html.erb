@@ -1,16 +1,18 @@
+<% content_for :mHeader do %>
+    <%= stylesheet_link_tag 'table', 'data-turbolinks-track' => true %>
+<% end %>
+
 <% content_for :mLogin do %>
     <%= render :partial => '/login/login' %>
 <% end %>
 
 <% content_for :mFrame do %>
-    
-    <script type="text/javascript">
-      updateUrl();
-    </script>
-    
-    </script>
-        
-        <!--<div id="left">-->
+
+<script type="text/javascript">
+  updateUrl();
+</script>
+
+<!--<div id="left">-->
         <div class ="navbarfix-right">
           <%= link_to "PROTECTED ", {:controller => :protected, :action => :index}, style: "color: white; text-decoration: none; padding: 5px" %>
           <!--</div>-->
@@ -45,43 +47,11 @@
 		<br>
 		<br>
   <a href="/posts/new" data-turbolinks="false" class="btn btn-lg btn-info" style=" color: white; " >CREATE A POST</a> 
+  <%= link_to 'Test email', { controller: "authentications", action: "mail", :uid => current_user.id } %>
 <% end %>
 	</div>
 </div>
 
-
-
-
-<!--<h2 class="centered centered-title" style="color: #797979">BROWSE LISTINGS</h2>-->
-
-
-
-<!--<div class="container-fluid full-width">-->
-  
-
-
-
-  <!--<div class="container-fluid full-wdith">-->
-<!--    <div class="row">-->
-<!--      <div class="col-md-3"></div>-->
-<!--      <div class="col-md-6">-->
-<!--        <div class="post-listings centered-body">-->
-<!--  		  % @posts.each do |post| %>-->
-<!--            <div class="post-slot">-->
-<!--              <ul class="review-list">-->
-<!--                <li style="color: #797979">%= post.owner_name %></li>-->
-<!--                <li class="btn btn-primary btn-success" style="font-weight: bold">%= post.type %></li>-->
-<!--                <li style="font-size: 12px; font-weight: bold">%= post.title %> </li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--        % end %>-->
-<!--  	    </div>-->
-<!--      </div>-->
-<!--        <div class="col-md-3"></div>-->
-<!--  	   </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
 
 <div class="container">
   <div class="row">

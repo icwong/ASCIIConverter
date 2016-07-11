@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th><%= @job_one.title %></th>
+      <th><%= @job_two.title %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><strong>Body</strong></td>
+      <td><%=raw @job_one.body %></td>
+      <td><%=raw @job_two.body %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Owner</strong></td>
+      <td><%=raw @job_one.owner_name %></td>
+      <td><%=raw @job_two.owner_name %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Title</strong></td>
+      <td><%=raw @job_one.type %></td>
+      <td><%=raw @job_two.type %></td>
+    </tr>
+  </tbody>
+</table>
+
+<a href="#" onclick="lastUrl(); return false; ">Back</a>
