@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'compare' => 'main#compare'
   get 'mail' => 'authentications#mail'
   get 'verify' => 'authentications#verify'
+  post 'user_registration' => "main#index"
   
 
   resources :posts
