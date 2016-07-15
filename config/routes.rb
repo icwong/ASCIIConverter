@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :profiles
   resources :tags
   
-  root 'main#home'
+  root 'main#index'
 
   get 'admin' => 'admin#index'
   get 'index' => 'main#index'
